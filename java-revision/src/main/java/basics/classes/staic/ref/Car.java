@@ -4,8 +4,8 @@ public class Car {
 
     public int model;
 
-    public static void whatModel(int model) {
-        System.out.println("model= " + model);
+    public static void whatModel(int modelValue) {
+        System.out.println(STR."model=  \{modelValue}");
     }
 
 }

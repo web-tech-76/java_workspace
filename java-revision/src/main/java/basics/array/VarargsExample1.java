@@ -1,5 +1,7 @@
 package basics.array;
 
+import static java.lang.StringTemplate.RAW;
+
 public class VarargsExample1 {
 
 
@@ -15,44 +17,28 @@ public class VarargsExample1 {
 
     static private void m1(int... a) {
         for (int y : a) {
-            System.out.println("y value " + y);
+            System.out.println(STR."y value \{y}");
         }
-        System.out.println(" a length: " + a.length);
+        System.out.println(STR." a length: \{a.length}");
     }
+
+
+    //  m2(int[]... x) //  OK
+    //  m2(int... val, int... x) // doesn't compile
+    //  m2(String/ char or any other datatype... val, int... x) // doesn't compile
+    //  m2(int... []x) // doesn't compile
 
     // following is OK. varargs should be end of the parameter of function.
     // first value will be assigned to int in this case and others if provided assigned to x
     static private void m2(int val, int... x) {
+        var str1 = RAW."val is \{val}";
+        System.out.println(STR.process(str1));
 
+        for (int i : x) {
+            StringTemplate str2 = RAW."the value of i in x \{i}";
+            System.out.println(STR.process(str2));
+        }
     }
 
-    private void arrayEx() {
-        int[][][] z = {{{1, 2, 3}}, {{4, 5}}, {null}, null};
-
-        // System.out.println(z.length);
-
-        //System.out.println(z[0].length);
-
-        // System.out.println("z[i] -> " + z[0][0][0]);
-
-        //int [] x = new int[-1];
-
-//        int [] x1, x2;
-//
-//        x1 = new int[2];
-//        //x2 =10; // doesn't work as x2 is also array
-//        x2 = new int[3];
-//
-
-        //int x1[], x2; // x1 is array and x2 is int;
-
-
-    }
-
-    //  m2(int[]... x) //  OK
-
-    //  m2(int... val, int... x) // doesn't compile
-    //  m2(String/ char or any other datatype... val, int... x) // doesn't compile
-    //  m2(int... []x) // doesn't compile
 
 }

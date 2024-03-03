@@ -20,7 +20,8 @@ public class AppLocalDateTime {
     private LocalDateTime myLocalDateTime;
 
     public LocalDate getMyLocalDate() {
-        return this.myLocalDate = LocalDate.of(2012, 11, 12);
+        return this.myLocalDate =
+                LocalDate.of(2012, 11, 12);
     }
 
     public LocalDate localDateUsingMonth() {

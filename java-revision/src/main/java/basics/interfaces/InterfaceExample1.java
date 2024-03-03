@@ -36,7 +36,7 @@ public class InterfaceExample1 implements NextDemo {
         demoOne();
         Demo.display();
 
-        Functional func = (name) -> " hi " + name;
+        Functional func = (name) -> STR." hi \{name}";
 
         System.out.println(func.getName("shan"));
 

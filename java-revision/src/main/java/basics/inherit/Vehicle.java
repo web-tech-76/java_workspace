@@ -2,8 +2,8 @@ package basics.inherit;
 
 public class Vehicle {
 
-    public void addChasis() {
-        System.out.println(" added Chasis vehicle");
+    public void addChassis() {
+        System.out.println(" added Chassis vehicle");
     }
 
 

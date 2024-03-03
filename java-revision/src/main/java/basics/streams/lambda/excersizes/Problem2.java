@@ -5,7 +5,12 @@ import java.util.Optional;
 
 public class Problem2 {
 
-    public static void main(String[] args) {
+
+    /*
+    5. list of tickets , check if all the clients have email defined.
+
+     */
+    private static void checkClientEmail() {
 
         List<Client> clientList = new ClientDao().getClientList();
 
@@ -14,10 +19,19 @@ public class Problem2 {
                 .filter(client -> client.getEmail().isEmpty())
                 .findAny();
 
-        clients.ifPresentOrElse((client) ->{
+        clients.ifPresentOrElse((client) -> {
             System.out.println(client);
-        }, () ->{
+        }, () -> {
             System.out.println(" no data");
         });
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+        checkClientEmail();
+
     }
 }

@@ -1,6 +1,6 @@
 package basics.inner;
 
-public class InnerClassexample1Client {
+public class InnerClassExample1Client {
 
 
     public static void main(String[] args) {
@@ -8,6 +8,6 @@ public class InnerClassexample1Client {
         InnerClassExample.A a = innerClassExample.new A();
 
         System.out.println(a.methodA());
-        System.out.println("InnerClassexample1Client.main" + InnerClassExample.B.methodB());
+        System.out.printf("method value %d -> ", InnerClassExample.B.methodB());
     }
 }

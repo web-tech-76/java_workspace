@@ -14,8 +14,8 @@ public class Example1 {
             Comparator<Pet> -> int compare(Pet p1, Pet p2)
         */
 
-        Comparator<Pet> c1 = (Pet p1, Pet p2) -> p1.getName().compareTo(p2.getName());
-        Comparator<Pet> c2 = (Pet p1, Pet p2) -> p1.getAge() - p2.getAge();
+        Comparator<Pet> c1 = Comparator.comparing(Pet::getName);
+        Comparator<Pet> c2 = Comparator.comparingInt(Pet::getAge);
 
         SortedSet<Pet> petSortedSet1 = new TreeSet<>(c1);
         SortedSet<Pet> petSortedSet2 = new TreeSet<>(c2);

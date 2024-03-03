@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -18,7 +19,7 @@ public class Emp {
 
     private String name;
 
-    private Date doj;
+    private LocalDate doj;
 
     private Double salary;
 

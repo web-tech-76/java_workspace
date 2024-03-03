@@ -1,5 +1,7 @@
 package basics.classes;
 
+import static java.lang.StringTemplate.RAW;
+
 public class SimpleClass {
 
     int index = 0;
@@ -8,7 +10,7 @@ public class SimpleClass {
 
     {
         index = 100;
-        System.out.println("2nd initializing block for instance " + index);
+        System.out.println(STR."initializing block for instance \{index}");
     }
 
     public SimpleClass() {
@@ -17,9 +19,9 @@ public class SimpleClass {
 
 
     public static void main(String[] args) {
-
         SimpleClass simpleClass = new SimpleClass();
-        System.out.println("index value -> " + simpleClass.index);
+        StringTemplate str1 = RAW."main method index value -> \{simpleClass.index}";
+        System.out.println(STR.process(str1));
     }
 
 }

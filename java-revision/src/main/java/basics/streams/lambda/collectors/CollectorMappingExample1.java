@@ -11,11 +11,7 @@ public class CollectorMappingExample1 {
         List<String> strList = List.of("AAA", "bb", "123", "abc456");
 
         List<Integer> list1 = strList
-                .stream()
-                .collect(mapping(
-                        value -> value.length(),
-                        toList()
-                ));
+                .stream().map(value -> value.length()).collect(toList());
 
         System.out.println(list1);
 

@@ -16,9 +16,9 @@ public class NumberFormatsAndTypes {
 
         Locale.availableLocales()
                 .forEach(locale -> {
-                    //System.out.println(locale.getDisplayName());
                     NumberFormat numberFormat = NumberFormat.getInstance(locale);
-                    System.out.println(" locale = [ " + locale.getDisplayName() + " ] -> formatted value = " + numberFormat.format(amount));
+                    System.out.println(
+                            " locale = [ " + locale.getDisplayName() + " ] -> formatted value = " + numberFormat.format(amount));
                 });
 
 

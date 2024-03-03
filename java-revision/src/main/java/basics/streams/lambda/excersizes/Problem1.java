@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.Set;
 
 import static java.util.stream.Collectors.filtering;
@@ -12,6 +13,11 @@ import static java.util.stream.Collectors.toSet;
 
 public class Problem1 {
 
+    /*
+
+    1. Having a list of tickets and a destination return the number of tickets with given destination.
+
+     */
     private static void getTicketsByDestination(String destination) {
         List<Tickets> ticketsList = new TicketsDao().getTicketsList();
 
@@ -25,11 +31,16 @@ public class Problem1 {
         Set<Tickets> ticketsSet =
                 ticketsList.stream()
                         .collect(filtering(dest ->
-                                dest.getDestination().equalsIgnoreCase(destination) ||
-                                        dest.getDepartureFrom().equalsIgnoreCase(destination), toSet()));
+                                        dest.getDestination().equalsIgnoreCase(destination) ||
+                                                dest.getDepartureFrom().equalsIgnoreCase(destination),
+                                toSet()));
         System.out.println(ticketsSet);
     }
 
+    /*
+    2. Having list of tickets and the a date print out tickets for given date
+
+     */
 
     private static void getTicketsByTravelDate(LocalDateTime travelDate) {
 
@@ -55,6 +66,10 @@ public class Problem1 {
 
     }
 
+    /*
+    3. Having a list of tickets and the name of client , check if there is atleast one ticket reserved for given client.
+
+     */
 
     private static void getTicketsByClientName(String name) {
 
@@ -77,6 +92,39 @@ public class Problem1 {
                 });
 
     }
+
+    /*
+    6. list of tickets ... return comma seperated destinations in the ticket list.
+     */
+
+    private static void listAllDestinationsTicketList() {
+
+        List<Tickets> ticketsList = new TicketsDao().getTicketsList();
+
+        List<String> destList = ticketsList.stream()
+                .map(Tickets::getDestination)
+                .toList();
+
+        System.out.println(destList);
+    }
+
+    /*
+    4. Having a list of tickets , return average value of prices for all the tickets in the list.
+
+     */
+
+    private static void averageTicketsPrice() {
+
+        List<Tickets> ticketsList = new TicketsDao().getTicketsList();
+
+        OptionalDouble averagePrice = ticketsList.stream()
+                .map(Tickets::getPrice)
+                .mapToDouble(price -> price)
+                .average();
+
+        System.out.println("avg Price" + averagePrice);
+    }
+
 
     public static void main(String[] args) {
 

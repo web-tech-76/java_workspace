@@ -1,7 +1,5 @@
 package basics.classes.datatypes;
 
-import basics.models.Dog;
-
 public class FinalModifierExample1 {
 
     public static void main(String[] args) {
