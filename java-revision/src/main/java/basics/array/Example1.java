@@ -10,7 +10,7 @@ public class Example1 {
 
         System.out.println(z[0].length);
 
-        System.out.println(STR."the value of z[0][0][0] \{z[0][0][0]}");
+        System.out.println(z[0][0][0]);
 
         // negative array size exception
         //int[] x = new int[-1];
