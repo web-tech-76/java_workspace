@@ -37,7 +37,9 @@ public class ReactEx2 {
                                 v -> v.split(":")[1])
                         .block();
 
-        values.forEach((key, value) -> System.out.println(STR."key -> \{key} value \{value}"));
+        values.forEach((key, value) ->
+                System.out.println(key + ": " + value)
+        );
 
     }
 
@@ -46,7 +48,9 @@ public class ReactEx2 {
         var interval = Flux.interval(Duration.ofMillis(100))
                 .take(20);
 
-        interval.subscribe(value -> System.out.println(STR."value\{value}"));
+        interval.subscribe(value ->
+                System.out.println("value = " + value)
+                );
 
         Thread.sleep(3000);
 

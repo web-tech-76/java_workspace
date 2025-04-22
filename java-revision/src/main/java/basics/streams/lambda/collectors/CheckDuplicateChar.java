@@ -16,7 +16,7 @@ public class CheckDuplicateChar {
                 buffer.append(charSequence);
             }
         }
-        System.out.println(STR."Ultimate String -> \{buffer.toString()}");
+        System.out.println("buffer.toString() = " + buffer.toString());
     }
 
     public static void main(String[] args) {

@@ -13,15 +13,20 @@ public class FrequencyEx1 {
         // number of times the element is repeated in the collection.
         var val = 7;
         int freq = Collections.frequency(list1, val);
-        System.out.println(STR."value  \{val} is repeted \{freq} times");
+        System.out.println(
+                " value{" +
+                        "val + " +
+                        "} is repeted {" +
+                        " freq  ");
+
 
         list1 = list1.reversed();
-        System.out.println(STR."reversed List \{list1}");
+        System.out.println("list1 = " + list1);
 
         list1 = new LinkedList<>(List.of(1, 2, 3));
 
         var list2 = new LinkedList<>(list1);
         Collections.shuffle(list2);
-        System.out.println(STR."shuffled List \{list2}");
+        System.out.println("list2 = " + list2);
     }
 }
