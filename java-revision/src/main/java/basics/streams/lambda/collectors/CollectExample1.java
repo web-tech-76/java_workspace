@@ -83,7 +83,7 @@ public class CollectExample1 {
 
         List<Object> genList = strList.stream().collect(Collectors.teeing(
                 Collectors.counting(),
-                Collectors.joining(),
+                Collectors.joining("->"),
                 (first, second) -> List.of(first, second)
         ));
 

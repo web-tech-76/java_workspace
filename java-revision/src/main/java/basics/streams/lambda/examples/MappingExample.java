@@ -33,7 +33,8 @@ public class MappingExample {
 
         values
                 .mapToObj(value -> Integer.toBinaryString(value))
-                .map(val -> val.length() < 5 ? new StringBuilder("0".repeat(5 - val.length())) + val : val)
+                .map(val -> val.length() < 5 ?
+                        new StringBuilder("0".repeat(5 - val.length())) + val : val)
                 .forEach(System.out::println);
 
     }
